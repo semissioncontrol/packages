@@ -5,6 +5,7 @@ metadata:
  - source: "https://github.com/semissioncontrol/packages/standard-os/etc/"
  - source-git: "false"
  - var: "DESTDIR"
+ - depends-on: "svn"
  - depends-on: "wget"
  - depends-on: "cd"
  - depends-on: "cp"
@@ -14,6 +15,6 @@ build:
  - type: "source"
  - version: "0.0.3a"
  - steps:
-  - step: "wget raw.githubusercontent.com/etc/"
+  - step: "svn raw.githubusercontent.com/etc/"
   - step: "cd etc"
   - step: "cp ./* ${DESTDIR}/etc/"
